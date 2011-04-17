@@ -1,0 +1,19 @@
+name:          positional-numerals
+version:       0.1
+cabal-version: >= 1.6
+build-type:    Simple
+stability:     experimental
+author:        Roel van Dijk <vandijk.roel@gmail.com>
+maintainer:    Roel van Dijk <vandijk.roel@gmail.com>
+copyright:     (c) 2010 Roel van Dijk
+license:       BSD3
+license-file:  LICENSE
+category:      Numerical, Text
+synopsis:      Utilities for working with positional numeral systems
+description:
+
+library
+  build-depends: base                 >= 3.0.3.1 && < 4.3
+               , base-unicode-symbols >= 0.1.1   && < 0.3
+  exposed-modules: Text.Numeral.Positional
+  ghc-options: -Wall
