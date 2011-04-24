@@ -1,19 +1,44 @@
 name:          positional-numerals
 version:       0.1
-cabal-version: >= 1.6
+cabal-version: >= 1.8
 build-type:    Simple
 stability:     experimental
 author:        Roel van Dijk <vandijk.roel@gmail.com>
 maintainer:    Roel van Dijk <vandijk.roel@gmail.com>
-copyright:     (c) 2010 Roel van Dijk
+copyright:     2010—2011 Roel van Dijk <vandijk.roel@gmail.com>
 license:       BSD3
 license-file:  LICENSE
 category:      Numerical, Text
 synopsis:      Utilities for working with positional numeral systems
 description:
 
+extra-source-files: ./LICENSE
+
+-------------------------------------------------------------------------------
+
+source-repository head
+  type: git
+  location: git://github.com/roelvandijk/positional-numerals.git
+
+-------------------------------------------------------------------------------
+
 library
-  build-depends: base                 >= 3.0.3.1 && < 4.3
+  hs-source-dirs: src
+  build-depends: base                 >= 3.0.3.1 && < 4.4
                , base-unicode-symbols >= 0.1.1   && < 0.3
   exposed-modules: Text.Numeral.Positional
+  other-modules: Text.Numeral.Positional.Digits
   ghc-options: -Wall
+
+-------------------------------------------------------------------------------
+
+test-suite test-numerals
+  type: exitcode-stdio-1.0
+  main-is: test.hs
+  hs-source-dirs: src, test
+  build-depends: base                       >= 3.0.3.1 && < 4.4
+               , base-unicode-symbols       >= 0.1.1   && < 0.3
+               , test-framework             >= 0.3.3   && < 0.4
+               , test-framework-quickcheck2 >= 0.2.9   && < 0.3
+               , QuickCheck                 >= 2.4     && < 2.5
+
